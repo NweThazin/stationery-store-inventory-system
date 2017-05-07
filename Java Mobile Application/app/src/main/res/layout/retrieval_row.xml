@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:paddingTop="8dp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:weightSum="1.0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_weight="0.05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtItemNumber"
+                android:textColor="@color/blackcolor"/>
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_weight="0.95"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtItemDescription"
+                android:textColor="@color/blackcolor"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:paddingLeft="5dp"
+        android:paddingBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bin #: "
+                android:textColor="@color/blackcolor"/>
+            <TextView
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtBin"
+                android:textColor="@color/blackcolor"/>
+        </TableRow>
+
+    </TableLayout>
+
+
+    <TableLayout
+        android:paddingLeft="5dp"
+        android:paddingBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qty to Retrieve : "
+                android:textColor="@color/blackcolor"/>
+            <TextView
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtTotalRetrievedQty"
+                android:textColor="@color/blackcolor"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

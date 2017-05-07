@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ADTeam1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ADTeam1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adjustments" EntityType="ADTeam1Model.Adjustment" />
+    <EntitySet Name="Adjustment_Item" EntityType="ADTeam1Model.Adjustment_Item" />
+    <EntitySet Name="Categories" EntityType="ADTeam1Model.Category" />
+    <EntitySet Name="CollectionPoints" EntityType="ADTeam1Model.CollectionPoint" />
+    <EntitySet Name="Departments" EntityType="ADTeam1Model.Department" />
+    <EntitySet Name="Disbursements" EntityType="ADTeam1Model.Disbursement" />
+    <EntitySet Name="Disbursement_Item" EntityType="ADTeam1Model.Disbursement_Item" />
+    <EntitySet Name="Employees" EntityType="ADTeam1Model.Employee" />
+    <EntitySet Name="Items" EntityType="ADTeam1Model.Item" />
+    <EntitySet Name="Purchases" EntityType="ADTeam1Model.Purchase" />
+    <EntitySet Name="Purchase_Item" EntityType="ADTeam1Model.Purchase_Item" />
+    <EntitySet Name="Requisitions" EntityType="ADTeam1Model.Requisition" />
+    <EntitySet Name="Requisition_Item" EntityType="ADTeam1Model.Requisition_Item" />
+    <EntitySet Name="Suppliers" EntityType="ADTeam1Model.Supplier" />
+    <EntitySet Name="Supplier_Item" EntityType="ADTeam1Model.Supplier_Item" />
+    <EntitySet Name="Users" EntityType="ADTeam1Model.User" />
+    <AssociationSet Name="FK_Adjustment_Employee" Association="ADTeam1Model.FK_Adjustment_Employee">
+      <End EntitySet="Employees" Role="Employee" />
+      <End EntitySet="Adjustments" Role="Adjustment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adjustment_Item_Adjustment" Association="ADTeam1Model.FK_Adjustment_Item_Adjustment">
+      <End EntitySet="Adjustments" Role="Adjustment" />
+      <End EntitySet="Adjustment_Item" Role="Adjustment_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adjustment_Item_Item" Association="ADTeam1Model.FK_Adjustment_Item_Item">
+      <End EntitySet="Items" Role="Item" />
+      <End EntitySet="Adjustment_Item" Role="Adjustment_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Category" Association="ADTeam1Model.FK_Item_Category">
+      <End EntitySet="Categories" Role="Category" />
+      <End EntitySet="Items" Role="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CollectionPoint_Employee" Association="ADTeam1Model.FK_CollectionPoint_Employee">
+      <End EntitySet="Employees" Role="Employee" />
+      <End EntitySet="CollectionPoints" Role="CollectionPoint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_CollectionPoint" Association="ADTeam1Model.FK_Department_CollectionPoint">
+      <End EntitySet="CollectionPoints" Role="CollectionPoint" />
+      <End EntitySet="Departments" Role="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disbursement_Department" Association="ADTeam1Model.FK_Disbursement_Department">
+      <End EntitySet="Departments" Role="Department" />
+      <End EntitySet="Disbursements" Role="Disbursement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Department" Association="ADTeam1Model.FK_Employee_Department">
+      <End EntitySet="Departments" Role="Department" />
+      <End EntitySet="Employees" Role="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requisition_Department" Association="ADTeam1Model.FK_Requisition_Department">
+      <End EntitySet="Departments" Role="Department" />
+      <End EntitySet="Requisitions" Role="Requisition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disbursement_Item_Disbursement" Association="ADTeam1Model.FK_Disbursement_Item_Disbursement">
+      <End EntitySet="Disbursements" Role="Disbursement" />
+      <End EntitySet="Disbursement_Item" Role="Disbursement_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disbursement_Item_Item" Association="ADTeam1Model.FK_Disbursement_Item_Item">
+      <End EntitySet="Items" Role="Item" />
+      <End EntitySet="Disbursement_Item" Role="Disbursement_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Employee" Association="ADTeam1Model.FK_Purchase_Employee">
+      <End EntitySet="Employees" Role="Employee" />
+      <End EntitySet="Purchases" Role="Purchase" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requisition_Employee" Association="ADTeam1Model.FK_Requisition_Employee">
+      <End EntitySet="Employees" Role="Employee" />
+      <End EntitySet="Requisitions" Role="Requisition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Employee" Association="ADTeam1Model.FK_User_Employee">
+      <End EntitySet="Employees" Role="Employee" />
+      <End EntitySet="Users" Role="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Item_Item" Association="ADTeam1Model.FK_Purchase_Item_Item">
+      <End EntitySet="Items" Role="Item" />
+      <End EntitySet="Purchase_Item" Role="Purchase_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requisiton_Item_Item" Association="ADTeam1Model.FK_Requisiton_Item_Item">
+      <End EntitySet="Items" Role="Item" />
+      <End EntitySet="Requisition_Item" Role="Requisition_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supplier_Item_Item" Association="ADTeam1Model.FK_Supplier_Item_Item">
+      <End EntitySet="Items" Role="Item" />
+      <End EntitySet="Supplier_Item" Role="Supplier_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Item_Purchase" Association="ADTeam1Model.FK_Purchase_Item_Purchase">
+      <End EntitySet="Purchases" Role="Purchase" />
+      <End EntitySet="Purchase_Item" Role="Purchase_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Item_Supplier" Association="ADTeam1Model.FK_Purchase_Item_Supplier">
+      <End EntitySet="Suppliers" Role="Supplier" />
+      <End EntitySet="Purchase_Item" Role="Purchase_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requisiton_Item_Requisition" Association="ADTeam1Model.FK_Requisiton_Item_Requisition">
+      <End EntitySet="Requisitions" Role="Requisition" />
+      <End EntitySet="Requisition_Item" Role="Requisition_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supplier_Item_Supplier" Association="ADTeam1Model.FK_Supplier_Item_Supplier">
+      <End EntitySet="Suppliers" Role="Supplier" />
+      <End EntitySet="Supplier_Item" Role="Supplier_Item" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Adjustment">
+    <Key>
+      <PropertyRef Name="AdjustmentID" />
+    </Key>
+    <Property Name="AdjustmentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="Date" Precision="0" Type="DateTime" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="Status" MaxLength="30" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Price" Precision="18" Scale="0" Type="Decimal" />
+    <NavigationProperty Name="Employee" Relationship="ADTeam1Model.FK_Adjustment_Employee" FromRole="Adjustment" ToRole="Employee" />
+    <NavigationProperty Name="Adjustment_Item" Relationship="ADTeam1Model.FK_Adjustment_Item_Adjustment" FromRole="Adjustment" ToRole="Adjustment_Item" />
+  </EntityType>
+  <EntityType Name="Adjustment_Item">
+    <Key>
+      <PropertyRef Name="Adjustment_ItemID" />
+    </Key>
+    <Property Name="Adjustment_ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="AdjustmentID" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="AdjustedQty" Type="Int32" />
+    <Property Name="Reason" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Condition" MaxLength="30" FixedLength="false" Unicode="false" Type="String" />
+    <NavigationProperty Name="Adjustment" Relationship="ADTeam1Model.FK_Adjustment_Item_Adjustment" FromRole="Adjustment_Item" ToRole="Adjustment" />
+    <NavigationProperty Name="Item" Relationship="ADTeam1Model.FK_Adjustment_Item_Item" FromRole="Adjustment_Item" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="CategoryName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <NavigationProperty Name="Items" Relationship="ADTeam1Model.FK_Item_Category" FromRole="Category" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="CollectionPoint">
+    <Key>
+      <PropertyRef Name="CollectionPointID" />
+    </Key>
+    <Property Name="CollectionPointID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="Name" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Time" Precision="7" Type="Time" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="ADTeam1Model.FK_CollectionPoint_Employee" FromRole="CollectionPoint" ToRole="Employee" />
+    <NavigationProperty Name="Departments" Relationship="ADTeam1Model.FK_Department_CollectionPoint" FromRole="CollectionPoint" ToRole="Department" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="DepartmentCode" MaxLength="20" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="DepartmentName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Phone" Type="Int32" />
+    <Property Name="CollectionPointID" Type="Int32" />
+    <NavigationProperty Name="CollectionPoint" Relationship="ADTeam1Model.FK_Department_CollectionPoint" FromRole="Department" ToRole="CollectionPoint" />
+    <NavigationProperty Name="Disbursements" Relationship="ADTeam1Model.FK_Disbursement_Department" FromRole="Department" ToRole="Disbursement" />
+    <NavigationProperty Name="Employees" Relationship="ADTeam1Model.FK_Employee_Department" FromRole="Department" ToRole="Employee" />
+    <NavigationProperty Name="Requisitions" Relationship="ADTeam1Model.FK_Requisition_Department" FromRole="Department" ToRole="Requisition" />
+  </EntityType>
+  <EntityType Name="Disbursement">
+    <Key>
+      <PropertyRef Name="DisbursementID" />
+    </Key>
+    <Property Name="DisbursementID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="CollectionDate" Precision="0" Type="DateTime" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="Status" MaxLength="30" FixedLength="false" Unicode="false" Type="String" />
+    <NavigationProperty Name="Department" Relationship="ADTeam1Model.FK_Disbursement_Department" FromRole="Disbursement" ToRole="Department" />
+    <NavigationProperty Name="Disbursement_Item" Relationship="ADTeam1Model.FK_Disbursement_Item_Disbursement" FromRole="Disbursement" ToRole="Disbursement_Item" />
+  </EntityType>
+  <EntityType Name="Disbursement_Item">
+    <Key>
+      <PropertyRef Name="Disbursement_ItemID" />
+    </Key>
+    <Property Name="Disbursement_ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="DisbursementID" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Status" MaxLength="30" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Date" Precision="0" Type="DateTime" />
+    <NavigationProperty Name="Disbursement" Relationship="ADTeam1Model.FK_Disbursement_Item_Disbursement" FromRole="Disbursement_Item" ToRole="Disbursement" />
+    <NavigationProperty Name="Item" Relationship="ADTeam1Model.FK_Disbursement_Item_Item" FromRole="Disbursement_Item" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="FirstName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="LastName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Email" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Phone" Type="Int32" />
+    <Property Name="Address" MaxLength="300" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <NavigationProperty Name="Adjustments" Relationship="ADTeam1Model.FK_Adjustment_Employee" FromRole="Employee" ToRole="Adjustment" />
+    <NavigationProperty Name="CollectionPoints" Relationship="ADTeam1Model.FK_CollectionPoint_Employee" FromRole="Employee" ToRole="CollectionPoint" />
+    <NavigationProperty Name="Department" Relationship="ADTeam1Model.FK_Employee_Department" FromRole="Employee" ToRole="Department" />
+    <NavigationProperty Name="Purchases" Relationship="ADTeam1Model.FK_Purchase_Employee" FromRole="Employee" ToRole="Purchase" />
+    <NavigationProperty Name="Requisitions" Relationship="ADTeam1Model.FK_Requisition_Employee" FromRole="Employee" ToRole="Requisition" />
+    <NavigationProperty Name="Users" Relationship="ADTeam1Model.FK_User_Employee" FromRole="Employee" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="ItemNumber" MaxLength="20" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="Description" MaxLength="300" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="InStockQty" Type="Int32" />
+    <Property Name="ReorderLevel" Type="Int32" />
+    <Property Name="ReorderQty" Type="Int32" />
+    <Property Name="UnitOfMeasure" MaxLength="20" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Bin" MaxLength="10" FixedLength="false" Unicode="false" Type="String" />
+    <NavigationProperty Name="Adjustment_Item" Relationship="ADTeam1Model.FK_Adjustment_Item_Item" FromRole="Item" ToRole="Adjustment_Item" />
+    <NavigationProperty Name="Category" Relationship="ADTeam1Model.FK_Item_Category" FromRole="Item" ToRole="Category" />
+    <NavigationProperty Name="Disbursement_Item" Relationship="ADTeam1Model.FK_Disbursement_Item_Item" FromRole="Item" ToRole="Disbursement_Item" />
+    <NavigationProperty Name="Purchase_Item" Relationship="ADTeam1Model.FK_Purchase_Item_Item" FromRole="Item" ToRole="Purchase_Item" />
+    <NavigationProperty Name="Requisition_Item" Relationship="ADTeam1Model.FK_Requisiton_Item_Item" FromRole="Item" ToRole="Requisition_Item" />
+    <NavigationProperty Name="Supplier_Item" Relationship="ADTeam1Model.FK_Supplier_Item_Item" FromRole="Item" ToRole="Supplier_Item" />
+  </EntityType>
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="PurchaseID" />
+    </Key>
+    <Property Name="PurchaseID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="PurchaseDate" Precision="0" Type="DateTime" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="ADTeam1Model.FK_Purchase_Employee" FromRole="Purchase" ToRole="Employee" />
+    <NavigationProperty Name="Purchase_Item" Relationship="ADTeam1Model.FK_Purchase_Item_Purchase" FromRole="Purchase" ToRole="Purchase_Item" />
+  </EntityType>
+  <EntityType Name="Purchase_Item">
+    <Key>
+      <PropertyRef Name="Purchase_ItemID" />
+    </Key>
+    <Property Name="Purchase_ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="QtyOrdered" Type="Int32" />
+    <Property Name="DateSupplied" Precision="0" Type="DateTime" />
+    <Property Name="TotalPrice" Precision="18" Scale="0" Type="Decimal" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="PurchaseID" Type="Int32" />
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="DateExpectedDelivery" Precision="0" Type="DateTime" />
+    <Property Name="QuantityReceived" Type="Int32" />
+    <NavigationProperty Name="Item" Relationship="ADTeam1Model.FK_Purchase_Item_Item" FromRole="Purchase_Item" ToRole="Item" />
+    <NavigationProperty Name="Purchase" Relationship="ADTeam1Model.FK_Purchase_Item_Purchase" FromRole="Purchase_Item" ToRole="Purchase" />
+    <NavigationProperty Name="Supplier" Relationship="ADTeam1Model.FK_Purchase_Item_Supplier" FromRole="Purchase_Item" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="Requisition">
+    <Key>
+      <PropertyRef Name="RequisitionID" />
+    </Key>
+    <Property Name="RequisitionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="DepartmentID" Nullable="false" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="OrderDate" Precision="0" Type="DateTime" />
+    <Property Name="Status" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Reason" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+    <NavigationProperty Name="Department" Relationship="ADTeam1Model.FK_Requisition_Department" FromRole="Requisition" ToRole="Department" />
+    <NavigationProperty Name="Employee" Relationship="ADTeam1Model.FK_Requisition_Employee" FromRole="Requisition" ToRole="Employee" />
+    <NavigationProperty Name="Requisition_Item" Relationship="ADTeam1Model.FK_Requisiton_Item_Requisition" FromRole="Requisition" ToRole="Requisition_Item" />
+  </EntityType>
+  <EntityType Name="Requisition_Item">
+    <Key>
+      <PropertyRef Name="Requisition_ItemID" />
+    </Key>
+    <Property Name="Requisition_ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="RequisitionID" Nullable="false" Type="Int32" />
+    <Property Name="ItemID" Nullable="false" Type="Int32" />
+    <Property Name="RequestedQty" Type="Int32" />
+    <Property Name="ReceivedQty" Type="Int32" />
+    <Property Name="UnfulfilledQty" Type="Int32" />
+    <Property Name="Status" MaxLength="20" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="RetrievedQty" Type="Int32" />
+    <Property Name="ToRetrieveQty" Type="Int32" />
+    <NavigationProperty Name="Item" Relationship="ADTeam1Model.FK_Requisiton_Item_Item" FromRole="Requisition_Item" ToRole="Item" />
+    <NavigationProperty Name="Requisition" Relationship="ADTeam1Model.FK_Requisiton_Item_Requisition" FromRole="Requisition_Item" ToRole="Requisition" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="SupplierCode" MaxLength="10" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="SupplierName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="ContactName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Phone" Type="Int32" />
+    <Property Name="Address" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <NavigationProperty Name="Purchase_Item" Relationship="ADTeam1Model.FK_Purchase_Item_Supplier" FromRole="Supplier" ToRole="Purchase_Item" />
+    <NavigationProperty Name="Supplier_Item" Relationship="ADTeam1Model.FK_Supplier_Item_Supplier" FromRole="Supplier" ToRole="Supplier_Item" />
+  </EntityType>
+  <EntityType Name="Supplier_Item">
+    <Key>
+      <PropertyRef Name="Supplier_ItemID" />
+    </Key>
+    <Property Name="Supplier_ItemID" Nullable="false" Type="Int32" />
+    <Property Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="SupplierID" Type="Int32" />
+    <Property Name="UnitPrice" Type="Double" />
+    <NavigationProperty Name="Item" Relationship="ADTeam1Model.FK_Supplier_Item_Item" FromRole="Supplier_Item" ToRole="Item" />
+    <NavigationProperty Name="Supplier" Relationship="ADTeam1Model.FK_Supplier_Item_Supplier" FromRole="Supplier_Item" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="UserName" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Password" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="PrimaryRole" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="DelegatedRole" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="StartDate" Precision="0" Type="DateTime" />
+    <Property Name="EndDate" Precision="0" Type="DateTime" />
+    <NavigationProperty Name="Employee" Relationship="ADTeam1Model.FK_User_Employee" FromRole="User" ToRole="Employee" />
+  </EntityType>
+  <Association Name="FK_Adjustment_Employee">
+    <End Type="ADTeam1Model.Employee" Multiplicity="0..1" Role="Employee" />
+    <End Type="ADTeam1Model.Adjustment" Multiplicity="*" Role="Adjustment" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Adjustment">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adjustment_Item_Adjustment">
+    <End Type="ADTeam1Model.Adjustment" Multiplicity="0..1" Role="Adjustment" />
+    <End Type="ADTeam1Model.Adjustment_Item" Multiplicity="*" Role="Adjustment_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Adjustment">
+        <PropertyRef Name="AdjustmentID" />
+      </Principal>
+      <Dependent Role="Adjustment_Item">
+        <PropertyRef Name="AdjustmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adjustment_Item_Item">
+    <End Type="ADTeam1Model.Item" Multiplicity="0..1" Role="Item" />
+    <End Type="ADTeam1Model.Adjustment_Item" Multiplicity="*" Role="Adjustment_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Adjustment_Item">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Category">
+    <End Type="ADTeam1Model.Category" Multiplicity="0..1" Role="Category" />
+    <End Type="ADTeam1Model.Item" Multiplicity="*" Role="Item" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CollectionPoint_Employee">
+    <End Type="ADTeam1Model.Employee" Multiplicity="0..1" Role="Employee" />
+    <End Type="ADTeam1Model.CollectionPoint" Multiplicity="*" Role="CollectionPoint" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="CollectionPoint">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_CollectionPoint">
+    <End Type="ADTeam1Model.CollectionPoint" Multiplicity="0..1" Role="CollectionPoint" />
+    <End Type="ADTeam1Model.Department" Multiplicity="*" Role="Department" />
+    <ReferentialConstraint>
+      <Principal Role="CollectionPoint">
+        <PropertyRef Name="CollectionPointID" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="CollectionPointID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disbursement_Department">
+    <End Type="ADTeam1Model.Department" Multiplicity="0..1" Role="Department" />
+    <End Type="ADTeam1Model.Disbursement" Multiplicity="*" Role="Disbursement" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Disbursement">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Department">
+    <End Type="ADTeam1Model.Department" Multiplicity="0..1" Role="Department" />
+    <End Type="ADTeam1Model.Employee" Multiplicity="*" Role="Employee" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requisition_Department">
+    <End Type="ADTeam1Model.Department" Multiplicity="1" Role="Department" />
+    <End Type="ADTeam1Model.Requisition" Multiplicity="*" Role="Requisition" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Requisition">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disbursement_Item_Disbursement">
+    <End Type="ADTeam1Model.Disbursement" Multiplicity="0..1" Role="Disbursement" />
+    <End Type="ADTeam1Model.Disbursement_Item" Multiplicity="*" Role="Disbursement_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Disbursement">
+        <PropertyRef Name="DisbursementID" />
+      </Principal>
+      <Dependent Role="Disbursement_Item">
+        <PropertyRef Name="DisbursementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disbursement_Item_Item">
+    <End Type="ADTeam1Model.Item" Multiplicity="0..1" Role="Item" />
+    <End Type="ADTeam1Model.Disbursement_Item" Multiplicity="*" Role="Disbursement_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Disbursement_Item">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Employee">
+    <End Type="ADTeam1Model.Employee" Multiplicity="0..1" Role="Employee" />
+    <End Type="ADTeam1Model.Purchase" Multiplicity="*" Role="Purchase" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Purchase">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requisition_Employee">
+    <End Type="ADTeam1Model.Employee" Multiplicity="0..1" Role="Employee" />
+    <End Type="ADTeam1Model.Requisition" Multiplicity="*" Role="Requisition" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Requisition">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Employee">
+    <End Type="ADTeam1Model.Employee" Multiplicity="0..1" Role="Employee" />
+    <End Type="ADTeam1Model.User" Multiplicity="*" Role="User" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Item_Item">
+    <End Type="ADTeam1Model.Item" Multiplicity="0..1" Role="Item" />
+    <End Type="ADTeam1Model.Purchase_Item" Multiplicity="*" Role="Purchase_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Purchase_Item">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requisiton_Item_Item">
+    <End Type="ADTeam1Model.Item" Multiplicity="1" Role="Item" />
+    <End Type="ADTeam1Model.Requisition_Item" Multiplicity="*" Role="Requisition_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Requisition_Item">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supplier_Item_Item">
+    <End Type="ADTeam1Model.Item" Multiplicity="1" Role="Item" />
+    <End Type="ADTeam1Model.Supplier_Item" Multiplicity="*" Role="Supplier_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Supplier_Item">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Item_Purchase">
+    <End Type="ADTeam1Model.Purchase" Multiplicity="0..1" Role="Purchase" />
+    <End Type="ADTeam1Model.Purchase_Item" Multiplicity="*" Role="Purchase_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase">
+        <PropertyRef Name="PurchaseID" />
+      </Principal>
+      <Dependent Role="Purchase_Item">
+        <PropertyRef Name="PurchaseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Item_Supplier">
+    <End Type="ADTeam1Model.Supplier" Multiplicity="0..1" Role="Supplier" />
+    <End Type="ADTeam1Model.Purchase_Item" Multiplicity="*" Role="Purchase_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Purchase_Item">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requisiton_Item_Requisition">
+    <End Type="ADTeam1Model.Requisition" Multiplicity="1" Role="Requisition" />
+    <End Type="ADTeam1Model.Requisition_Item" Multiplicity="*" Role="Requisition_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Requisition">
+        <PropertyRef Name="RequisitionID" />
+      </Principal>
+      <Dependent Role="Requisition_Item">
+        <PropertyRef Name="RequisitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supplier_Item_Supplier">
+    <End Type="ADTeam1Model.Supplier" Multiplicity="0..1" Role="Supplier" />
+    <End Type="ADTeam1Model.Supplier_Item" Multiplicity="*" Role="Supplier_Item" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Supplier_Item">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

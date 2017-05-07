@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA4A528A-E0B8-417F-86CB-CF668D816BFB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ADProjectSA43_Team1</RootNamespace>
+    <AssemblyName>ADProjectSA43_Team1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\DataAccess\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\DataAccess\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll\itextsharp.dll" />
+    <Content Include="dll\itextsharp.pdfa.dll" />
+    <Content Include="dll\itextsharp.xtra.dll" />
+    <Content Include="Employee\ApproveRequisition.aspx" />
+    <Content Include="Employee\ApproveRequisitionDetail.aspx" />
+    <Content Include="Employee\ChangeRepresentative.aspx" />
+    <Content Include="Employee\CheckCollectionPoint.aspx" />
+    <Content Include="Employee\DelegateHead.aspx" />
+    <Content Include="Employee\DisbursementList.aspx" />
+    <Content Include="Employee\Requisition.aspx" />
+    <Content Include="Employee\RequisitionDetail.aspx" />
+    <Content Include="Employee\StationeryCatalogue.aspx" />
+    <Content Include="ErrorPage\404.aspx" />
+    <Content Include="ErrorPage\500.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="image\404.jpg" />
+    <Content Include="image\500.png" />
+    <Content Include="image\notification icon.png" />
+    <Content Include="image\warehouse.png" />
+    <Content Include="LoggedInPage.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\PurchaseReport.aspx" />
+    <Content Include="Reports\RequisitionReport.aspx" />
+    <Content Include="Site1.Master" />
+    <Content Include="EmpMaster.Master" />
+    <Content Include="Reports\ReportDataSet.xsc">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ReportDataSet.xss">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StoreClerk\AddItem.aspx" />
+    <Content Include="StoreClerk\AdjustmentVouchersDetail.aspx" />
+    <Content Include="StoreClerk\AdjustmentVouchersList.aspx" />
+    <Content Include="StoreClerk\Allocate.aspx" />
+    <Content Include="StoreClerk\DelegateBySupervisor.aspx" />
+    <Content Include="StoreClerk\DelegateByManager.aspx" />
+    <Content Include="StoreClerk\DestinationPage.aspx" />
+    <Content Include="StoreClerk\DisbursementListPage.aspx" />
+    <Content Include="StoreClerk\Distribution.aspx" />
+    <Content Include="StoreClerk\EditItem.aspx" />
+    <Content Include="StoreClerk\InventoryAdjustment.aspx" />
+    <Content Include="StoreClerk\InventoryPage.aspx" />
+    <Content Include="StoreClerk\InventoryPageEdit.aspx" />
+    <Content Include="StoreClerk\InventoryReport.aspx" />
+    <Content Include="StoreClerk\PurchaseOrder.aspx" />
+    <Content Include="StoreClerk\ReorderPurchaseReport.aspx" />
+    <Content Include="StoreClerk\ReorderReport.aspx" />
+    <Content Include="StoreClerk\RetrievalPage.aspx" />
+    <Content Include="StoreClerk\StockCard.aspx" />
+    <Content Include="StoreClerk\SupplierExport.aspx" />
+    <Content Include="StoreClerk\UpdateStockCard.aspx" />
+    <Content Include="Style\menubar.css" />
+    <Content Include="Style\Style.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Employee\ApproveRequisition.aspx.cs">
+      <DependentUpon>ApproveRequisition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\ApproveRequisition.aspx.designer.cs">
+      <DependentUpon>ApproveRequisition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\ApproveRequisitionDetail.aspx.cs">
+      <DependentUpon>ApproveRequisitionDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\ApproveRequisitionDetail.aspx.designer.cs">
+      <DependentUpon>ApproveRequisitionDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\ChangeRepresentative.aspx.cs">
+      <DependentUpon>ChangeRepresentative.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\ChangeRepresentative.aspx.designer.cs">
+      <DependentUpon>ChangeRepresentative.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\CheckCollectionPoint.aspx.cs">
+      <DependentUpon>CheckCollectionPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\CheckCollectionPoint.aspx.designer.cs">
+      <DependentUpon>CheckCollectionPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\DelegateHead.aspx.cs">
+      <DependentUpon>DelegateHead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\DelegateHead.aspx.designer.cs">
+      <DependentUpon>DelegateHead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\DisbursementList.aspx.cs">
+      <DependentUpon>DisbursementList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\DisbursementList.aspx.designer.cs">
+      <DependentUpon>DisbursementList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Requisition.aspx.cs">
+      <DependentUpon>Requisition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\Requisition.aspx.designer.cs">
+      <DependentUpon>Requisition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\RequisitionDetail.aspx.cs">
+      <DependentUpon>RequisitionDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\RequisitionDetail.aspx.designer.cs">
+      <DependentUpon>RequisitionDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\StationeryCatalogue.aspx.cs">
+      <DependentUpon>StationeryCatalogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\StationeryCatalogue.aspx.designer.cs">
+      <DependentUpon>StationeryCatalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpMaster.Master.cs">
+      <DependentUpon>EmpMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpMaster.Master.designer.cs">
+      <DependentUpon>EmpMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage\500.aspx.designer.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelSupplier.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedInPage.aspx.cs">
+      <DependentUpon>LoggedInPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoggedInPage.aspx.designer.cs">
+      <DependentUpon>LoggedInPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\PurchaseCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaseReport.aspx.cs">
+      <DependentUpon>PurchaseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaseReport.aspx.designer.cs">
+      <DependentUpon>PurchaseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RequisitionCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RequisitionReport.aspx.cs">
+      <DependentUpon>RequisitionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\RequisitionReport.aspx.designer.cs">
+      <DependentUpon>RequisitionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\AddItem.aspx.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\AddItem.aspx.designer.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\AdjustmentVouchersDetail.aspx.cs">
+      <DependentUpon>AdjustmentVouchersDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\AdjustmentVouchersDetail.aspx.designer.cs">
+      <DependentUpon>AdjustmentVouchersDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\AdjustmentVouchersList.aspx.cs">
+      <DependentUpon>AdjustmentVouchersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\AdjustmentVouchersList.aspx.designer.cs">
+      <DependentUpon>AdjustmentVouchersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\Allocate.aspx.cs">
+      <DependentUpon>Allocate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\Allocate.aspx.designer.cs">
+      <DependentUpon>Allocate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\DelegateBySupervisor.aspx.cs">
+      <DependentUpon>DelegateBySupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\DelegateBySupervisor.aspx.designer.cs">
+      <DependentUpon>DelegateBySupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\DelegateByManager.aspx.cs">
+      <DependentUpon>DelegateByManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\DelegateByManager.aspx.designer.cs">
+      <DependentUpon>DelegateByManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\DestinationPage.aspx.cs">
+      <DependentUpon>DestinationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\DestinationPage.aspx.designer.cs">
+      <DependentUpon>DestinationPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\DisbursementListPage.aspx.cs">
+      <DependentUpon>DisbursementListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\DisbursementListPage.aspx.designer.cs">
+      <DependentUpon>DisbursementListPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\Distribution.aspx.cs">
+      <DependentUpon>Distribution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\Distribution.aspx.designer.cs">
+      <DependentUpon>Distribution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\EditItem.aspx.cs">
+      <DependentUpon>EditItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\EditItem.aspx.designer.cs">
+      <DependentUpon>EditItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\InventoryAdjustment.aspx.cs">
+      <DependentUpon>InventoryAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\InventoryAdjustment.aspx.designer.cs">
+      <DependentUpon>InventoryAdjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\InventoryPage.aspx.cs">
+      <DependentUpon>InventoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\InventoryPage.aspx.designer.cs">
+      <DependentUpon>InventoryPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\InventoryPageEdit.aspx.cs">
+      <DependentUpon>InventoryPageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\InventoryPageEdit.aspx.designer.cs">
+      <DependentUpon>InventoryPageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\InventoryReport.aspx.cs">
+      <DependentUpon>InventoryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\InventoryReport.aspx.designer.cs">
+      <DependentUpon>InventoryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\PurchaseOrder.aspx.cs">
+      <DependentUpon>PurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\PurchaseOrder.aspx.designer.cs">
+      <DependentUpon>PurchaseOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\ReorderPurchaseReport.aspx.cs">
+      <DependentUpon>ReorderPurchaseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\ReorderPurchaseReport.aspx.designer.cs">
+      <DependentUpon>ReorderPurchaseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\ReorderReport.aspx.cs">
+      <DependentUpon>ReorderReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\ReorderReport.aspx.designer.cs">
+      <DependentUpon>ReorderReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\RetrievalPage.aspx.cs">
+      <DependentUpon>RetrievalPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\RetrievalPage.aspx.designer.cs">
+      <DependentUpon>RetrievalPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\StockCard.aspx.cs">
+      <DependentUpon>StockCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\StockCard.aspx.designer.cs">
+      <DependentUpon>StockCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\SupplierExport.aspx.cs">
+      <DependentUpon>SupplierExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\SupplierExport.aspx.designer.cs">
+      <DependentUpon>SupplierExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreClerk\UpdateStockCard.aspx.cs">
+      <DependentUpon>UpdateStockCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreClerk\UpdateStockCard.aspx.designer.cs">
+      <DependentUpon>UpdateStockCard.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\PurchaseCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchaseCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RequisitionCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RequisitionCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{c0c60322-d8a4-4f8a-a3c5-f6f07f757a09}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessObject\BusinessObject.csproj">
+      <Project>{56b3d5fc-be9e-4219-8b21-9c9d6dc2ec40}</Project>
+      <Name>BusinessObject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>43634</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:43634/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

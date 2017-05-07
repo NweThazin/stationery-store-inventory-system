@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f91e5eca2e1e4be3822ae54003b4bc0e" Name="Diagram1" ZoomLevel="14">
+        <EntityTypeShape EntityType="ADTeam1Model.Adjustment" PointX="3" PointY="14.375" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Adjustment_Item" PointX="5.25" PointY="6.25" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Category" PointX="0.75" PointY="10.75" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.CollectionPoint" PointX="1.5" PointY="5.375" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Department" PointX="3.75" PointY="1.5" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Disbursement" PointX="6" PointY="2.5" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Disbursement_Item" PointX="8.25" PointY="6.25" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Employee" PointX="1.5" PointY="0.75" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Item" PointX="3" PointY="9.625" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Purchase" PointX="3" PointY="22.25" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Purchase_Item" PointX="5.25" PointY="9.875" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Requisition" PointX="6" PointY="18.25" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Requisition_Item" PointX="8.25" PointY="10" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Supplier" PointX="3" PointY="18.875" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.Supplier_Item" PointX="5.25" PointY="14.5" Width="1.5" />
+        <EntityTypeShape EntityType="ADTeam1Model.User" PointX="3.75" PointY="25.375" Width="1.5" />
+        <AssociationConnector Association="ADTeam1Model.FK_Adjustment_Employee" />
+        <AssociationConnector Association="ADTeam1Model.FK_Adjustment_Item_Adjustment" />
+        <AssociationConnector Association="ADTeam1Model.FK_Adjustment_Item_Item" />
+        <AssociationConnector Association="ADTeam1Model.FK_Item_Category" />
+        <AssociationConnector Association="ADTeam1Model.FK_CollectionPoint_Employee" />
+        <AssociationConnector Association="ADTeam1Model.FK_Department_CollectionPoint" />
+        <AssociationConnector Association="ADTeam1Model.FK_Disbursement_Department" />
+        <AssociationConnector Association="ADTeam1Model.FK_Employee_Department" />
+        <AssociationConnector Association="ADTeam1Model.FK_Requisition_Department" />
+        <AssociationConnector Association="ADTeam1Model.FK_Disbursement_Item_Disbursement" />
+        <AssociationConnector Association="ADTeam1Model.FK_Disbursement_Item_Item" />
+        <AssociationConnector Association="ADTeam1Model.FK_Purchase_Employee" />
+        <AssociationConnector Association="ADTeam1Model.FK_Requisition_Employee" />
+        <AssociationConnector Association="ADTeam1Model.FK_User_Employee" />
+        <AssociationConnector Association="ADTeam1Model.FK_Purchase_Item_Item" />
+        <AssociationConnector Association="ADTeam1Model.FK_Requisiton_Item_Item" />
+        <AssociationConnector Association="ADTeam1Model.FK_Supplier_Item_Item" />
+        <AssociationConnector Association="ADTeam1Model.FK_Purchase_Item_Purchase" />
+        <AssociationConnector Association="ADTeam1Model.FK_Purchase_Item_Supplier" />
+        <AssociationConnector Association="ADTeam1Model.FK_Requisiton_Item_Requisition" />
+        <AssociationConnector Association="ADTeam1Model.FK_Supplier_Item_Supplier" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

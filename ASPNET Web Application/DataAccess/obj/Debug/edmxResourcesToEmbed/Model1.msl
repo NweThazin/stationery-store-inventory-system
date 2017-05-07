@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ADTeam1ModelStoreContainer" CdmEntityContainer="ADTeam1Entities">
+    <EntitySetMapping Name="Adjustments">
+      <EntityTypeMapping TypeName="ADTeam1Model.Adjustment">
+        <MappingFragment StoreEntitySet="Adjustment">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="AdjustmentID" ColumnName="AdjustmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adjustment_Item">
+      <EntityTypeMapping TypeName="ADTeam1Model.Adjustment_Item">
+        <MappingFragment StoreEntitySet="Adjustment_Item">
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="AdjustedQty" ColumnName="AdjustedQty" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="AdjustmentID" ColumnName="AdjustmentID" />
+          <ScalarProperty Name="Adjustment_ItemID" ColumnName="Adjustment_ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="ADTeam1Model.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CollectionPoints">
+      <EntityTypeMapping TypeName="ADTeam1Model.CollectionPoint">
+        <MappingFragment StoreEntitySet="CollectionPoint">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CollectionPointID" ColumnName="CollectionPointID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="ADTeam1Model.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="CollectionPointID" ColumnName="CollectionPointID" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disbursements">
+      <EntityTypeMapping TypeName="ADTeam1Model.Disbursement">
+        <MappingFragment StoreEntitySet="Disbursement">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="CollectionDate" ColumnName="CollectionDate" />
+          <ScalarProperty Name="DisbursementID" ColumnName="DisbursementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disbursement_Item">
+      <EntityTypeMapping TypeName="ADTeam1Model.Disbursement_Item">
+        <MappingFragment StoreEntitySet="Disbursement_Item">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="DisbursementID" ColumnName="DisbursementID" />
+          <ScalarProperty Name="Disbursement_ItemID" ColumnName="Disbursement_ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="ADTeam1Model.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="ADTeam1Model.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="Bin" ColumnName="Bin" />
+          <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+          <ScalarProperty Name="ReorderQty" ColumnName="ReorderQty" />
+          <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
+          <ScalarProperty Name="InStockQty" ColumnName="InStockQty" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchases">
+      <EntityTypeMapping TypeName="ADTeam1Model.Purchase">
+        <MappingFragment StoreEntitySet="Purchase">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_Item">
+      <EntityTypeMapping TypeName="ADTeam1Model.Purchase_Item">
+        <MappingFragment StoreEntitySet="Purchase_Item">
+          <ScalarProperty Name="QuantityReceived" ColumnName="QuantityReceived" />
+          <ScalarProperty Name="DateExpectedDelivery" ColumnName="DateExpectedDelivery" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="DateSupplied" ColumnName="DateSupplied" />
+          <ScalarProperty Name="QtyOrdered" ColumnName="QtyOrdered" />
+          <ScalarProperty Name="Purchase_ItemID" ColumnName="Purchase_ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requisitions">
+      <EntityTypeMapping TypeName="ADTeam1Model.Requisition">
+        <MappingFragment StoreEntitySet="Requisition">
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="RequisitionID" ColumnName="RequisitionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requisition_Item">
+      <EntityTypeMapping TypeName="ADTeam1Model.Requisition_Item">
+        <MappingFragment StoreEntitySet="Requisition_Item">
+          <ScalarProperty Name="ToRetrieveQty" ColumnName="ToRetrieveQty" />
+          <ScalarProperty Name="RetrievedQty" ColumnName="RetrievedQty" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UnfulfilledQty" ColumnName="UnfulfilledQty" />
+          <ScalarProperty Name="ReceivedQty" ColumnName="ReceivedQty" />
+          <ScalarProperty Name="RequestedQty" ColumnName="RequestedQty" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="RequisitionID" ColumnName="RequisitionID" />
+          <ScalarProperty Name="Requisition_ItemID" ColumnName="Requisition_ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="ADTeam1Model.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplier_Item">
+      <EntityTypeMapping TypeName="ADTeam1Model.Supplier_Item">
+        <MappingFragment StoreEntitySet="Supplier_Item">
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="Supplier_ItemID" ColumnName="Supplier_ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ADTeam1Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="DelegatedRole" ColumnName="DelegatedRole" />
+          <ScalarProperty Name="PrimaryRole" ColumnName="PrimaryRole" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ADProjectSA43_Team1</string>
+
+    <!--string for navigation bar-->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <!--activity titles-->
+    <string name="distribution">Collection Points</string>
+    <string name="requisitions">Pending Requisitions</string>
+    <string name="collectionpoint">Current Collection Point</string>
+    <string name="representative">Current Representative</string>
+    <string name="delegatehead">Delegate Head</string>
+    <string name="employees">Employees</string>
+    <string name="requisitionitem">Requisition Items</string>
+
+    <!--string for login -->
+    <string name="signintext">Sign into your account</string>
+    <string name="username">Username</string>
+    <string name="login">Log In</string>
+    <string name="pw">******</string>
+
+    <string name="change">Change</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="assign">Assign</string>
+    <string name="approve">Approve</string>
+    <string name="reject">Reject</string>
+    <string name="confirm">Confirm</string>
+    <string name="changecp">Change Collection Point</string>
+
+
+</resources>

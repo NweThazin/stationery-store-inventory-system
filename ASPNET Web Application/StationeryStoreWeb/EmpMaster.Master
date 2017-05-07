@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EmpMaster.master.cs" Inherits="ADProjectSA43_Team1.EmpMaster" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <%-- Title Bar Image --%>
+    <link rel="shortcut icon" href="image/warehouse.png"/>
+    <title>Stationery Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%--Style--%>
+    <link rel="stylesheet" href="Style/menubar.css" />
+    <link rel="stylesheet" href="Style/Style.css" />
+    <%--Jquery--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <%--Bootstrap--%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%--Bootstrap Date-Picker Plugin--%>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+    <%--FontAwesome--%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+    <%-- Menu --%>
+    <div class="menu">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-4">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Logic University</a>
+                </div>
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-4">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><asp:LinkButton ID="lnkbtnCatalogue" runat="server" OnClick="lnkbtnCatalogue_Click">Catalogue</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lnkbtnRequisition" runat="server" OnClick="lnkbtnRequisition_Click">Requisition</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lnkbtnApprove" runat="server" OnClick="lnkbtnApprove_Click">Approve Requisition</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lnkbtnChange" runat="server" OnClick="lnkbtnChange_Click">Collection Points</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lnkbtnChangeRep" runat="server" OnClick="lnkbtnChangeRep_Click">Representative</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lnkbtnDelegateRole" runat="server" OnClick="lnkbtnDelegateRole_Click">Delegate</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lnkbtnDisbursement" runat="server" OnClick="lnkbtnDisbursement_Click">Disbursement</asp:LinkButton></li>
+ <%--                       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Delegate<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+
+                            </ul>
+                        </li>--%>
+                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><asp:Label ID="lblUserName" runat="server" style="color: white;text-align:center;padding:10px;" ></asp:Label></li>
+                        <li><asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Logout</asp:LinkButton></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    </div>
+</form>
+</body>
+</html>
+

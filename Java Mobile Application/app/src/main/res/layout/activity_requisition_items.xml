@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_requisition_items"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.adprojectsa43_team1.adprojectsa43_team1.RequisitionItemsList">
+
+    <ListView
+        android:id="@+id/requisitionItemsList"
+        android:layout_width="match_parent"
+        android:layout_height="332dp"
+        android:choiceMode="singleChoice"
+        android:layout_weight="0.99" />
+
+    <TableRow
+        android:weightSum="1.0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/whitecolor"
+            android:background="@drawable/green_roundbtn"
+            android:id="@+id/btnApprove"
+            android:text="@string/approve" />
+
+        <Button
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/whitecolor"
+            android:background="@drawable/white_roundbtn"
+            android:id="@+id/btnReject"
+            android:text="@string/reject" />
+    </TableRow>
+
+</LinearLayout>

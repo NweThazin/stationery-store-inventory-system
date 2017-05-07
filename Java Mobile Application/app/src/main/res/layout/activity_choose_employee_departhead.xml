@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_choose_employee"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context="com.example.adprojectsa43_team1.adprojectsa43_team1.AssignDeptHead"
+    android:weightSum="1">
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textVisiblePassword"
+            android:hint="Search Employee"
+            android:ems="10"
+            android:drawableLeft="@mipmap/ic_search_black_24dp"
+            android:id="@+id/searchEmployee" />
+
+        </TableRow>
+
+    <ListView
+        android:id="@+id/employeeList"
+        android:layout_width="match_parent"
+        android:layout_height="332dp"
+        android:choiceMode="singleChoice"
+        android:layout_weight="0.99" />
+
+
+
+    <TableRow
+        android:weightSum="1.0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/whitecolor"
+            android:background="@drawable/green_roundbtn"
+            android:id="@+id/assignbtn"
+            android:text="Assign" />
+
+        <Button
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/whitecolor"
+            android:background="@drawable/white_roundbtn"
+            android:id="@+id/cancelbtn"
+            android:text="Cancel" />
+    </TableRow>
+
+</LinearLayout>
+
+<!--
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+    android:gravity="center_vertical"
+    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+    android:minHeight="?android:attr/listPreferredItemHeightSmall"
+    android:textColor="@color/blackcolor"/>
+-->

@@ -1,0 +1,5 @@
+D:\GradDipinSystemAnalysis\01_AD Project\03_Team1_Workspace\Team1_Workspace_Version2\ADProjectSA43_Team1\BusinessObject\bin\Debug\BusinessObject.dll
+D:\GradDipinSystemAnalysis\01_AD Project\03_Team1_Workspace\Team1_Workspace_Version2\ADProjectSA43_Team1\BusinessObject\bin\Debug\BusinessObject.pdb
+D:\GradDipinSystemAnalysis\01_AD Project\03_Team1_Workspace\Team1_Workspace_Version2\ADProjectSA43_Team1\BusinessObject\obj\Debug\BusinessObject.dll
+D:\GradDipinSystemAnalysis\01_AD Project\03_Team1_Workspace\Team1_Workspace_Version2\ADProjectSA43_Team1\BusinessObject\obj\Debug\BusinessObject.pdb
+D:\GradDipinSystemAnalysis\01_AD Project\03_Team1_Workspace\Team1_Workspace_Version2\ADProjectSA43_Team1\BusinessObject\obj\Debug\BusinessObject.csprojResolveAssemblyReference.cache

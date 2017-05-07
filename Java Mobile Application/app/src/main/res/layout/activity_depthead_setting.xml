@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_change_representative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adprojectsa43_team1.adprojectsa43_team1.DeptHeadSettings">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+
+    <TextView
+        android:text="Choosen Delegate Head :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:id="@+id/txtDelegatedHead" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtDelegatedHead"
+        android:layout_toEndOf="@+id/txtDelegatedHead"
+        android:layout_marginStart="28dp"
+        android:id="@+id/txtName" />
+
+    <TextView
+        android:text="Duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDelegatedHead"
+        android:layout_alignStart="@+id/txtDelegatedHead"
+        android:layout_marginTop="35dp"
+        android:id="@+id/txtDuration" />
+
+    <TextView
+        android:text="Start Date  :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDuration"
+        android:layout_toEndOf="@+id/txtDuration"
+        android:layout_marginTop="16dp"
+        android:id="@+id/txtStartDate"
+        android:layout_alignStart="@+id/txtDuration" />
+
+    <Button
+        android:text="Set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDuration"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:id="@+id/btnSetStart" />
+
+    <TextView
+        android:text="End Date  :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSetStart"
+        android:layout_alignStart="@+id/txtStartDate"
+        android:layout_marginTop="64dp"
+        android:id="@+id/txtEndDate" />
+
+    <Button
+        android:text="Set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSetStart"
+        android:layout_alignStart="@+id/btnSetStart"
+        android:layout_marginTop="50dp"
+        android:id="@+id/btnSetEndDate" />
+
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/btnSave"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtStartDate"
+        android:layout_toStartOf="@+id/txtName"
+        android:id="@+id/txtSetStart" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtSetStart"
+        android:id="@+id/txtSetEnd"
+        android:layout_alignTop="@+id/txtEndDate" />
+
+</RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>

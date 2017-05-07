@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.adprojectsa43_team1.adprojectsa43_team1">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher3x"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DistributionList"
+            android:label="@string/distribution" />
+        <activity android:name=".DistributionDestinationList" />
+        <activity
+            android:name=".ApproveRequisitions"
+            android:label="@string/requisitions" />
+        <activity
+            android:name=".CurrentCollectionPoint"
+            android:label="@string/collectionpoint" />
+        <activity
+            android:name=".CurrentDeptRepresentative"
+            android:label="@string/representative" />
+        <!-- <activity -->
+        <!-- android:name=".CurrentDeptHead" -->
+        <!-- android:label="@string/delegatehead" /> -->
+        <activity
+            android:name=".AssignDeptRepresentative"
+            android:label="@string/employees" />
+        <activity
+            android:name=".RequisitionItemsList"
+            android:label="@string/requisitionitem" />
+
+        <!-- chaw -->
+        <activity
+            android:name=".AssignDeptHead"
+            android:label="Department Head" />
+        <activity
+            android:name=".CurrentDeptHead"
+            android:label="Current Department Head" />
+        <activity
+            android:name=".DeptHeadSettings"
+            android:label="Settings" />
+        <activity
+            android:name=".ChangeCollectionPoint"
+            android:label="Collection Points" />
+        <activity
+            android:name=".DepartmentAllocation"
+            android:label="Allocation by Department" />
+        <activity android:name=".DisbursementList_StoreClerk" />
+        <activity
+            android:name=".RetrievalSummaryList"
+            android:label="Items to Retrieve" />
+
+        <activity android:name=".DisbursementList_DeptRep"></activity>
+
+    </application>
+
+</manifest>
